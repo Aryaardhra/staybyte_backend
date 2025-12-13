@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
     _id : {
         type : String,
         required : true
@@ -22,8 +22,9 @@ const userSchema = mongoose.Schema({
         enum : ["user", "hotelOwner"], default : "user"
     },
     recentSearchedCities : [
-        { type : String, required : true }
+        { type : String,  default: [] }
     ],
+    
 }, {timestamps : true });
 
 const userModel = mongoose.models.user || mongoose.model("user", userSchema);

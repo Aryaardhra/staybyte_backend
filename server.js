@@ -3,14 +3,16 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./configs/db.js";
 import {clerkMiddleware} from "@clerk/express"
-import clerkWebhooks from "./controllers/clerkWebhooks.js";
+//import clerkWebhooks from "./controllers/clerkWebhooks.js";
 import userRouter from "./routes/userRouter.js";
 import hotelRouter from "./routes/hotelRouter.js";
 import roomRouter from "./routes/roomRouter.js";
 import bookingRouter from "./routes/bookingRouter.js";
-import {serve} from "inngest/express"
-import {inngest, functions} from "./inngest/index.js"
-import userModel from "./models/user.js";
+import {serve} from "inngest/express";
+import {  functions, inngest } from "./inngest/index.js";
+//import {serve} from "inngest/express"
+//import {inngest, functions} from "./inngest/index.js"
+//import userModel from "./models/user.js";
 //import { Webhook } from "svix";
 //app config
 

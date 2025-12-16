@@ -25,7 +25,7 @@ const syncUserCreation = inngest.createFunction(
         const userData = {
             _id: id,
             email: email_addresses[0].email_address,
-            profile_picture: image_url,
+            image: image_url,
             role,
             username
         }
@@ -44,7 +44,7 @@ const syncUserUpdation = inngest.createFunction(
     const updatedUserData = {
         email:  email_addresses[0].email_address,
         role,
-        profile_picture: image_url
+        image: image_url
     }
     await userModel.findByIdAndUpdate(id, updatedUserData)
         

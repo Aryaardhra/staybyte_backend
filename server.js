@@ -9,7 +9,10 @@ import hotelRouter from "./routes/hotelRouter.js";
 import roomRouter from "./routes/roomRouter.js";
 import bookingRouter from "./routes/bookingRouter.js";
 import {serve} from "inngest/express";
-import {  functions, inngest } from "./inngest/index.js";
+import {inngest, functions} from "./inngest/index.js";
+
+//import {serve} from "inngest/express";
+//import {  functions, inngest } from "./inngest/index.js";
 //import {serve} from "inngest/express"
 //import {inngest, functions} from "./inngest/index.js"
 //import userModel from "./models/user.js";
@@ -32,7 +35,7 @@ app.use(cors({ origin: allowedOrigins, credentials: true }));
 
 app.use(clerkMiddleware());
 
-app.use('/api/inngest', serve({ client: inngest, functions }))
+
 {/*
 // ✅ Bypass test route FIRST (before /api/clerk)
 app.post("/test/clerk", express.json(), async (req, res) => {
@@ -187,6 +190,8 @@ app.use(express.json());
 app.get("/", (req,res) => {
     res.send("API working")
 });
+
+app.use('/api/inngest', serve({ client: inngest, functions }))
 
 app.use("/api/user", userRouter);
 app.use("/api/hotels", hotelRouter);

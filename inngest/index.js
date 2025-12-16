@@ -1,5 +1,5 @@
 import { Inngest } from "inngest";
-import userModel from "../models/User";
+import userModel from "../models/User.js";
 
 
 

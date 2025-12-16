@@ -5,7 +5,7 @@ import userModel from "../models/User.js";
 
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "media" });
+export const inngest = new Inngest({ id: "staybyte" });
 
 // Inngest Function to save user data to a database
 const syncUserCreation = inngest.createFunction(

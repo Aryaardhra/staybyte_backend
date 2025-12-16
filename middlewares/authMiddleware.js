@@ -1,5 +1,6 @@
-import userModel from "../models/user.js";
+
 import { clerkClient} from '@clerk/express';
+import userModel from '../models/User.js';
 
 export const protect = async (req, res, next) => {
    const { userId } = await req.auth() || {};

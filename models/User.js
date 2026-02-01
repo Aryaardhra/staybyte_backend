@@ -19,7 +19,8 @@ const userSchema = new mongoose.Schema({
     },
     role : {
         type : String,
-        enum : ["user", "hotelOwner"], default : "user"
+        enum : ["user", "hotelOwner"], 
+        default : "user"
     },
     recentSearchedCities : [
         { type : String,  default: [] }

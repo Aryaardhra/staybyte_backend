@@ -1,6 +1,7 @@
+//import connectCloudinary from "../configs/cloudinary.js";
 import hotelModel from "../models/hotel.js";
 import roomModel from "../models/room.js";
-
+import { v2 as cloudinary } from "cloudinary";
 //api to create a new room for a hotel
 
 export const createRoom = async (req, res) => {
@@ -55,7 +56,7 @@ export const getRooms = async (req, res) => {
 
 export const getOwnerRooms = async (req, res) => {
     try {
-       const hotelData = await hotelModel({ owner : req.auth.userId });
+       const hotelData = await hotelModel.findOne({ owner : req.auth.userId });
        const rooms = await roomModel.find({ hotel : hotelData._id.toString()}).populate("hotel");
        res.json({ success : true, rooms }); 
     } catch (error) {

@@ -10,6 +10,7 @@ import roomRouter from "./routes/roomRouter.js";
 import bookingRouter from "./routes/bookingRouter.js";
 import {serve} from "inngest/express";
 import {inngest, functions} from "./inngest/index.js";
+import connectCloudinary from "./configs/cloudinary.js";
 
 //import {serve} from "inngest/express";
 //import {  functions, inngest } from "./inngest/index.js";
@@ -23,7 +24,7 @@ const app = express();
 dotenv.config();
 const PORT = process.env.PORT || 3002;
 connectDB();
-
+await connectCloudinary();
 
 const allowedOrigins = [ "http://localhost:5173" ]
 

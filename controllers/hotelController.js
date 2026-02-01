@@ -5,8 +5,8 @@ export const registerHotel = async (req, res) => {
     try {
         const { name, address, contact, city } = req.body;
         const owner = req.user._id;
-console.log("user:",req.user._id );
-        console.log("OWNER:", owner);
+//console.log("user:",req.user._id );
+      //  console.log("OWNER:", owner);
 
         const hotel = await hotelModel.findOne({ owner });
 

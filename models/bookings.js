@@ -16,11 +16,11 @@ const bookingSchema = new mongoose.Schema({
         ref : "hotel", 
         required : true
     },
-    checkInData : {
+    checkInDate : {
         type : Date,
         required : true
     },
-    checkOutData : {
+    checkOutDate : {
           type : Date,
         required : true
     },

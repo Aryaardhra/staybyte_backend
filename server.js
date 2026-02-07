@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 3002;
 connectDB();
 await connectCloudinary();
 
-const allowedOrigins = [ "http://localhost:5173" ]
+const allowedOrigins = [ process.env.VITE_FRONTEND_URL || "http://localhost:5173" ]
 
 
 

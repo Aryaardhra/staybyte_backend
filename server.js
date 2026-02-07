@@ -11,6 +11,7 @@ import bookingRouter from "./routes/bookingRouter.js";
 import {serve} from "inngest/express";
 import {inngest, functions} from "./inngest/index.js";
 import connectCloudinary from "./configs/cloudinary.js";
+import { stripeWebhooks } from "./controllers/stripeWebhooks.js";
 
 //import {serve} from "inngest/express";
 //import {  functions, inngest } from "./inngest/index.js";
@@ -194,10 +195,12 @@ app.get("/", (req,res) => {
 
 app.use('/api/inngest', serve({ client: inngest, functions }))
 
+app.use("/api/stripe", express.raw({type: "application/json"}), stripeWebhooks)
 app.use("/api/user", userRouter);
 app.use("/api/hotels", hotelRouter);
 app.use("/api/rooms", roomRouter);
 app.use("/api/bookings", bookingRouter);
+
 
 app.listen(PORT, () => {
     console.log(`server started on port ${PORT}`)

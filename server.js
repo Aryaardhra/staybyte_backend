@@ -34,7 +34,7 @@ await connectCloudinary();
 //middlewares
 // ✅ CORS setup
 app.use(cors({
-    origin: "https://staybyte-frontend-3jy4bf2b9-ardhras-projects-261e273a.vercel.app",
+    origin: "https://staybyte-frontend.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],

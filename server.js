@@ -27,7 +27,7 @@ const PORT = process.env.PORT || 3002;
 connectDB();
 await connectCloudinary();
 
-const allowedOrigins = [ "https://staybyte-frontend.vercel.app/","http://localhost:5173" ]
+const allowedOrigins = [ "https://staybyte-frontend.onrender.com","http://localhost:5173" ]
 
 
 

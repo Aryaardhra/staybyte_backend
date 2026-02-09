@@ -27,19 +27,22 @@ const PORT = process.env.PORT || 3002;
 connectDB();
 await connectCloudinary();
 
-//const allowedOrigins = [ "https://staybyte-frontend-3jy4bf2b9-ardhras-projects-261e273a.vercel.app" || "http://localhost:5173" ]
+const allowedOrigins = [ "https://staybyte-frontend.vercel.app/","http://localhost:5173" ]
 
 
 
 //middlewares
 // ✅ CORS setup
+
+app.use(cors({ origin: allowedOrigins, credentials: true }));
+/*
 app.use(cors({
     origin: "https://staybyte-frontend.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
-
+*/
 app.use(clerkMiddleware());
 
 

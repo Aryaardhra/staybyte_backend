@@ -26,6 +26,7 @@ dotenv.config();
 const PORT = process.env.PORT || 3002;
 connectDB();
 await connectCloudinary();
+app.use(express.json());
 
 const allowedOrigins = [ "https://staybyte-frontend.onrender.com","http://localhost:5173" ]
 
@@ -187,7 +188,7 @@ const clerkWebhooks = async (req, res) => {
     res.status(400).json({ success: false, message: error.message });
   }
 };*/}
-app.use(express.json());
+
 
 // Important: express.raw() for Clerk webhook route
 //app.post("/api/clerk", express.raw({ type: "application/json" }), clerkWebhooks);

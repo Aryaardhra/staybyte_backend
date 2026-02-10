@@ -24,7 +24,7 @@ import { stripeWebhooks } from "./controllers/stripeWebhooks.js";
 const app = express();
 dotenv.config();
 const PORT = process.env.PORT || 3002;
-connectDB();
+await connectDB();
 await connectCloudinary();
 app.use(express.json());
 

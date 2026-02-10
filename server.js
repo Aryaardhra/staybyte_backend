@@ -28,22 +28,22 @@ await connectDB();
 await connectCloudinary();
 app.use(express.json());
 
-const allowedOrigins = [ "https://staybyte-frontend.onrender.com","http://localhost:5173" ]
+const allowedOrigins = [ "http://localhost:5173", "https://staybyte-frontend.onrender.com" ]
 
 
 
 //middlewares
 // ✅ CORS setup
 
-app.use(cors({ origin: allowedOrigins, credentials: true }));
-/*
+//app.use(cors({ origin: allowedOrigins, credentials: true }));
+
 app.use(cors({
-    origin: "https://staybyte-frontend.vercel.app",
+    origin: process.env.NODE_ENV === "production" ? "https://staybyte-frontend.vercel.app" : "http://localhost:5173" ,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
-*/
+
 app.use(clerkMiddleware());
 
 

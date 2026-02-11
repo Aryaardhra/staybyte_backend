@@ -23,7 +23,7 @@ import { stripeWebhooks } from "./controllers/stripeWebhooks.js";
 
 const app = express();
 dotenv.config();
-const PORT = process.env.PORT || 3002;
+const port = process.env.PORT || 4002;
 await connectDB();
 await connectCloudinary();
 app.use(express.json());
@@ -211,6 +211,6 @@ app.use("/api/rooms", roomRouter);
 app.use("/api/bookings", bookingRouter);
 
 
-app.listen(PORT, () => {
-    console.log(`server started on port ${PORT}`)
+app.listen(port, () => {
+    console.log(`server started on port ${port}`)
 });

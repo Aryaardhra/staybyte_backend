@@ -28,9 +28,6 @@ await connectDB();
 await connectCloudinary();
 app.use(express.json());
 
-const allowedOrigins = [ "http://localhost:5173", "https://staybyte-frontend.onrender.com" ]
-
-
 
 //middlewares
 // ✅ CORS setup

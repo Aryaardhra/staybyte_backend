@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const bookingSchema = new mongoose.Schema({
     user : {
         type : String, 
-        ref : "User", 
+        ref : "user", 
         required : true
     },
     room : {

@@ -29,6 +29,7 @@ await connectCloudinary();
 app.use(express.json());
 
 
+app.post("/api/stripe", express.raw({type: "application/json"}), stripeWebhooks)
 //middlewares
 // ✅ CORS setup
 
@@ -201,7 +202,6 @@ app.get("/", (req,res) => {
 
 app.use('/api/inngest', serve({ client: inngest, functions }))
 
-app.use("/api/stripe", express.raw({type: "application/json"}), stripeWebhooks)
 app.use("/api/user", userRouter);
 app.use("/api/hotels", hotelRouter);
 app.use("/api/rooms", roomRouter);
